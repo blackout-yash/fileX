@@ -35,7 +35,6 @@ const downloadUtil = async (req, res, next) => {
 
         const imageUrl = file.url;
         await downloadFile(imageUrl, filePath);
-        res.deletepath = filePath;
 
         res.download(filePath);
     } catch (error) {
