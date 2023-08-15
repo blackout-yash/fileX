@@ -87,6 +87,7 @@ function FileDropZone() {
             <div className='body'>
                 <h1>Upload a file</h1>
                 <div className='upload-container'>
+                    {/* onDragStart, onDragOver,.., onDrop => built-in event handler in react  */}
                     <div className='border-container'
                         onDragStart={handleDragStart}
                         onDragOver={handleDragOver}
@@ -109,6 +110,8 @@ function FileDropZone() {
                         </div>
                     </div>
                 </div>
+                {/* https://www.npmjs.com/package/@ramonak/react-progress-bar */}
+                {/* isLabelVisible => x% is not visible */}
                 <div className='progress'>
                     {loading ? <ProgressBar completed={range} bgColor={'#1629ffbe'} isLabelVisible={false} /> :
                         <ProgressBar completed={60} baseBgColor={'#f9f9f9'} bgColor={'#f9f9f9'} />

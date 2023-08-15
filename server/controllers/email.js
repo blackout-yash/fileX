@@ -3,7 +3,7 @@ import { emailTemplate } from "../services/emailTemplate.js";
 import { sendMail } from "../services/mailService.js";
 
 export const email = async (req, res) => {
-    const { uuid, emailTo, emailFrom, expiresIn } = req.body;
+    const { uuid, emailTo, emailFrom } = req.body;
     if (!uuid || !emailTo || !emailFrom) {
         return res.status(422).send({ message: 'All fields are required.' });
     }

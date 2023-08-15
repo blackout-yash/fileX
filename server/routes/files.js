@@ -10,7 +10,6 @@ import { email } from "../controllers/email.js";
 const router = express.Router();
 
 const storage = multer.diskStorage({
-    // destination: (req, file, cb) => cb(null, "uploads/"),
     filename: (req, file, cb) => {
         const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${path.extname(file.originalname)}`;
         cb(null, uniqueName);
@@ -56,7 +55,6 @@ router.post("/", (req, res) => {
                 const response = await file.save();
                 return res.status(200).json({
                     id: response.uuid
-                    // file: `${process.env.APP_BASE_URL}/files/${response.uuid}`
                 });
             } else {
                 throw new Error("Server Slow");

@@ -14,10 +14,6 @@ router.get("/:uuid", async (req, res) => {
         }
 
         return res.status(200).json({
-            // uuid: file.uuid,
-            // fileName: file.fileName,
-            // fileSize: file.size,
-            // download: `${process.env.APP_BASE_URL}/files/download/${file.uuid}`
             url: file.url
         })
 

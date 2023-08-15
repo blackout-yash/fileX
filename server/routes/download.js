@@ -22,11 +22,11 @@ const downloadUtil = async (req, res, next) => {
         const file = await File.findOne({ uuid: req.params.uuid });
         if (!file) {
             return res.redirect(process.env.FRONTEND_URL);
-            // return res.status(400).json({
-            //     success: false,
-            //     error: "Link has been expired."
-            // });
         }
+
+        console.log(import.meta.url)
+        console.log(__filename)
+        console.log(__dirname)
 
         const dirPath = `${__dirname}/../uploads`;
         const fileName = `${req.params.uuid}`;

@@ -9,6 +9,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const directoryPath = `${__dirname}/../uploads`;
 
+dotenv.config({
+    path: '../.env'
+});
+
 connectDB("");
 
 export const folderDel = async () => {

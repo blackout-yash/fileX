@@ -8,10 +8,6 @@ router.get("/:uuid", async (req, res) => {
         const file = await File.findOne({ uuid: req.params.uuid });
         if (!file) {
             return res.redirect(process.env.FRONTEND_URL);
-            // return res.status(400).json({
-            //     success: false,
-            //     message: "Link has been expired."
-            // });
         }
         res.redirect(file.url);
     } catch (error) {
