@@ -21,7 +21,8 @@ const upload = multer({
     limits: { fileSize: 100000 * 100 }
 }).single("myfile");
 
-const client = filestack.init('A3PBFUnkdQBS0UTFgSZYVz');
+// const client = filestack.init('A3PBFUnkdQBS0UTFgSZYVz');
+const client = filestack.init('AbM2kTLcvTjCMdvZBu7uMz');
 
 router.post("/", (req, res) => {
     try {
